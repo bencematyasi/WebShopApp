@@ -15,4 +15,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebShopApp.Core.Entity\WebShopApp.Core.Entity.csproj" />
+    <ProjectReference Include="..\WebShopApp.Core\WebShopApp.Core.csproj" />
+    <ProjectReference Include="..\WebShopApp.Infrastructure.Data\WebShopApp.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
 </Project>
