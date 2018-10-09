@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebShopApp.Core.Application_Service.Service;
+using WebShopApp.Core.Entity;
 
 namespace WepShopApp.Controllers
 {
@@ -10,24 +12,32 @@ namespace WepShopApp.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+
+        private readonly IProductService _productService;
+
+        public ProductsController(IProductService productService)
         {
-            return new string[] { "value1", "value2" };
+            _productService = productService;
+        }
+        // GET api/products
+        [HttpGet]
+        public ActionResult<IEnumerable<Product>> Get()
+        {
+            return _productService.GetAllProducts();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Product> Get(int id)
         {
-            return "value";
+            return _productService.GetProductById(id);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Product product)
         {
+            _productService.CreateProduct(product);
         }
 
         // PUT api/values/5

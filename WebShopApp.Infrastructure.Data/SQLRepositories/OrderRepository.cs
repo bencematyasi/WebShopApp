@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using WebShopApp.Core.Domain_Service;
 using WebShopApp.Core.Entity;
 
@@ -38,6 +39,13 @@ namespace WebShopApp.Infrastructure.Data.Repositories
         public IEnumerable<Order> ReadAllOrder()
         {
             return _ctx.Orders;
+        }
+
+        public Order ReadOrderByIdIncludeProduct(int id)
+        {
+            return _ctx.Orders
+                .Include(o => o.Product)
+                .FirstOrDefault(p => p.Id == id);
         }
 
         public Order UpdateOrder(Order updateOrder)

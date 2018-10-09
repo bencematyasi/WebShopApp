@@ -9,6 +9,7 @@ namespace WebShopApp.Core.Domain_Service
         Order CreateOrder(Order order);
         //READ
         IEnumerable<Order> ReadAllOrder();
+        Order ReadOrderByIdIncludeProduct(int id);
         //UPDATE
         Order UpdateOrder(Order updateOrder);
         //DELETE

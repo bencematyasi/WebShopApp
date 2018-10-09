@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
 using WebShopApp.Core.Application_Service.Service;
 using WebShopApp.Core.Entity;
 
@@ -16,29 +18,44 @@ namespace WebShopApp.Core.Application_Service.Impl
             _productRepository = productRepository;
         }
 
-        public void DeleteProduct(int id)
+        public Product DeleteProduct(int id)
         {
-            _productRepository.DeleteProduct(id);
+            return _productRepository.DeleteProduct(id);
+        }
+
+        public Product CreateProduct(Product prod)
+        {
+            return _productRepository.CreateProduct(prod);
         }
 
         public List<Product> GetAllProducts()
         {
-           return _
+            return _productRepository.GetAllProducts().ToList();
         }
 
         public Product GetProductById(int id)
         {
-            throw new System.NotImplementedException();
+            return _productRepository.GetProductById(id);
         }
 
-        public Product NewProduct(Product order)
+        public Product NewProduct(string name, string category, double price, int stock, string description, int size)
         {
-            throw new System.NotImplementedException();
+            var prod = new Product()
+            {
+                Name = name,
+                Category = category,
+                Price = price,
+                Stock = stock,
+                Description = description,
+                Size = size
+            };
+
+            return prod;
         }
 
         public Product UpdateProduct(Order updateOrder)
         {
-            throw new System.NotImplementedException();
+            return _productRepository.UpdateProduct(updateOrder);
         }
     }
 }

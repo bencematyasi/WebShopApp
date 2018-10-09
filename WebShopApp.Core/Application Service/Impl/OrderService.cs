@@ -25,7 +25,8 @@ namespace WebShopApp.Core.Application_Service.Impl
 
         public Order FindOrderByIdIncludeProduct(int id)
         {
-            return null;
+            var order = _orderRepository.ReadOrderByIdIncludeProduct(id);
+            return order;
         }
 
         public List<Order> GetAllOrders()
@@ -45,7 +46,7 @@ namespace WebShopApp.Core.Application_Service.Impl
 
         public Order UpdateOrder(Order updateOrder)
         {
-            throw new System.NotImplementedException();
+            return _orderRepository.UpdateOrder(updateOrder);
         }
     }
 }
