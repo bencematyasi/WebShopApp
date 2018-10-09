@@ -6,13 +6,13 @@ namespace WebShopApp.Core.Domain_Service
     public interface IOrderRepository
     {    
         //CREATE
-        Order CreateProduct(Order order);
+        Order CreateOrder(Order order);
         //READ
-        IEnumerable<Order> ReadAllProduct();
+        IEnumerable<Order> ReadAllOrder();
         //UPDATE
-        Order UpdateProduct(Order updateOrder);
+        Order UpdateOrder(Order updateOrder);
         //DELETE
-        Order DeleteProduct(Order deleteOrder);
+        Order DeleteOrder(int id);
         //Get the product by id
         Order GetOrderById(int id);
     }

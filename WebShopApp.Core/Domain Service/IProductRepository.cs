@@ -7,13 +7,13 @@ namespace WebShopApp.Core.Domain_Service
     public interface IProductRepository
     {
         //CREATE
-        Product CreatProduct(Product product);
+        Product CreateProduct(Product product);
         //READ
         IEnumerable<Product> ReadAllProduct();
         //UPDATE
         Product UpdateProduct(Product updateProduct);
         //DELETE
-        Product DeleteProduct(Product deleteProduct);
+        Product DeleteProduct(int id);
         //Get the product by id
         Product GetProductById(int id);
     }
