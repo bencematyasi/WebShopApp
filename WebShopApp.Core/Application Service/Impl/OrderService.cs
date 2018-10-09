@@ -18,6 +18,11 @@ namespace WebShopApp.Core.Application_Service.Impl
             _productRepository = productRepository;
         }
 
+        public Order CreateOrder(Order order)
+        {
+            return _orderRepository.CreateOrder(order);
+        }
+
         public void DeleteOrder(int id)
         {
             _orderRepository.DeleteOrder(id);
@@ -39,9 +44,20 @@ namespace WebShopApp.Core.Application_Service.Impl
             return _orderRepository.GetOrderById(id);
         }
 
-        public Order NewOrder(Order order)
+        public Order NewOrder(string FirstName, string LastName, string Adress, int ZipCode, string Country, Product Product, int Quantity)
         {
-            return _orderRepository.CreateOrder(order);
+            var order = new Order()
+            {
+                FirstName = FirstName,
+                LastName = LastName,
+                Address = Adress,
+                ZipCode = ZipCode,
+                Country = Country,
+                Product = Product,
+                Quantity = Quantity
+            };
+
+            return order;
         }
 
         public Order UpdateOrder(Order updateOrder)
