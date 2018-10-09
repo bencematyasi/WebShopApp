@@ -21,7 +21,7 @@ namespace WepShopApp.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Order>> Get()
         {
-            return _orderService.GetAllOrders().ToList();
+            return _orderService.GetAllOrders();
         }
 
         //// GET api/values/5
