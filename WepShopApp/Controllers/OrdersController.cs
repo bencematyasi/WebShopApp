@@ -8,6 +8,8 @@ using WebShopApp.Infrastructure.Data.Repositories;
 
 namespace WepShopApp.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class OrdersController : Controller
     {
         private readonly IOrderService _orderService;
@@ -35,7 +37,7 @@ namespace WepShopApp.Controllers
         [HttpPost]
         public void Post([FromBody] Order order)
         {
-            _orderService.NewOrder(order);
+            _orderService.CreateOrder(order);
         }
 
         // PUT api/values/5

@@ -6,8 +6,9 @@ namespace WebShopApp.Core.Application_Service.Service
     public interface IOrderService
     {
         //create Order
-        Order NewOrder(Order order);
-
+        Order NewOrder(string FirstName, string LastName, string Adress, int ZipCode, string Country, Product Product, int Quantity);
+        Order CreateOrder(Order order);
+        
         //read Order
         List<Order> GetAllOrders();
         Order GetOrderById(int id);

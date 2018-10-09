@@ -75,7 +75,7 @@ namespace WepShopApp
                 using (IServiceScope scope = app.ApplicationServices.CreateScope())
                 {
                     WebShopAppContext ctx = scope.ServiceProvider.GetService<WebShopAppContext>();
-                   //DBInitializer.SeedDB(ctx);
+                   DBInitializer.SeedDB(ctx);
                 }
             }
             else
