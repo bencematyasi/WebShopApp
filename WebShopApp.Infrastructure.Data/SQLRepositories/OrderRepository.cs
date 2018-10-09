@@ -14,7 +14,7 @@ namespace WebShopApp.Infrastructure.Data.Repositories
         {
             _ctx = ctx;
         }
-        
+
         public Order CreateOrder(Order order)
         {
             _ctx.Attach(order).State = EntityState.Added;
