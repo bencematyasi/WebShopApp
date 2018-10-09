@@ -52,5 +52,9 @@ namespace WebShopApp.Infrastructure.Data.Repositories
         {
             return null;
         }
+        //public Order FindOrderByIdIncludeProduct(int id)
+        //{
+        //    return _ctx.Orders.Where(o => o.Id == id).Include(o => o.Product).FirstOrDefault();
+        //}
     }
 }

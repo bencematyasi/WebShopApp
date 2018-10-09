@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using WebShopApp.Core.Application_Service.Service;
+using WebShopApp.Core.Domain_Service;
 using WebShopApp.Core.Entity;
 
 namespace WebShopApp.Core.Application_Service.Impl
@@ -9,12 +10,12 @@ namespace WebShopApp.Core.Application_Service.Impl
     public class ProductService : IProductService
     {
 
-        private readonly IOrderService _orderService;
-        private readonly IProductService _productRepository;
+        private readonly IOrderRepository _orderRepository;
+        private readonly IProductRepository _productRepository;
 
-        public ProductService(IOrderService orderService, IProductService productRepository)
+        public ProductService(IOrderRepository orderRepository, IProductRepository productRepository)
         {
-            _orderService = orderService;
+            _orderRepository = orderRepository;
             _productRepository = productRepository;
         }
 
@@ -30,7 +31,7 @@ namespace WebShopApp.Core.Application_Service.Impl
 
         public List<Product> GetAllProducts()
         {
-            return _productRepository.GetAllProducts().ToList();
+            return _productRepository.ReadAllProduct().ToList();
         }
 
         public Product GetProductById(int id)
@@ -53,9 +54,9 @@ namespace WebShopApp.Core.Application_Service.Impl
             return prod;
         }
 
-        public Product UpdateProduct(Order updateOrder)
+        public Product UpdateProduct(Product updateProduct)
         {
-            return _productRepository.UpdateProduct(updateOrder);
+            return _productRepository.UpdateProduct(updateProduct);
         }
     }
 }

@@ -8,14 +8,11 @@ namespace WebShopApp.Core.Application_Service.Service
         //create Product
         Product NewProduct(string name, string category, double price, int stock, string description, int size);
         Product CreateProduct(Product prod);
-
         //read Product
         List<Product> GetAllProducts();
         Product GetProductById(int id);
-
         //update Product
-        Product UpdateProduct(Order updateOrder);
-
+        Product UpdateProduct(Product updateProduct);
         //delete Product
         Product DeleteProduct(int id);
     }

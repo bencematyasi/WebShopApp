@@ -42,7 +42,7 @@ namespace WepShopApp
             if (_env.IsDevelopment())
             {
                 services.AddDbContext<WebShopAppContext>(
-                    opt => opt.UseSqlite("Data Source=petShopApp.db"));
+                    opt => opt.UseSqlite("Data Source=webShopApp.db"));
             }
             else if (_env.IsProduction())
             {
@@ -75,7 +75,7 @@ namespace WepShopApp
                 using (IServiceScope scope = app.ApplicationServices.CreateScope())
                 {
                     WebShopAppContext ctx = scope.ServiceProvider.GetService<WebShopAppContext>();
-                    DBInitializer.SeedDB(ctx);
+                   //DBInitializer.SeedDB(ctx);
                 }
             }
             else
