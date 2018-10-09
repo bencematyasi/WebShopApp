@@ -31,7 +31,7 @@ namespace WebShopApp.Infrastructure.Data.Repositories
 
         public Order GetOrderById(int id)
         {
-            return _ctx.Orders.Include(o => o.ProductId)
+            return _ctx.Orders.Include(p => p.Product)
                 .FirstOrDefault(o => o.Id == id);
         }
 
