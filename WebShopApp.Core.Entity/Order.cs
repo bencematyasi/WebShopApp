@@ -16,6 +16,6 @@ namespace WebShopApp.Core.Entity
 
         public int ProductId { get; set; }
 
-        public int Quanity { get; set; }
+        public int Quantity { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace WebShopApp.Core.Domain_Service
     public interface IOrderRepository
     {    
         //CREATE
-        Order CreatProduct(Order order);
+        Order CreateProduct(Order order);
         //READ
         IEnumerable<Order> ReadAllProduct();
         //UPDATE

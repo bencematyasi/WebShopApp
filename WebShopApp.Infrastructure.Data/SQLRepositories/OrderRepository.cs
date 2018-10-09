@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using WebShopApp.Core.Domain_Service;
 using WebShopApp.Core.Entity;
@@ -6,7 +7,7 @@ namespace WebShopApp.Infrastructure.Data.Repositories
 {
     public class OrderRepository : IOrderRepository
     {
-        public Order CreatProduct(Order order)
+        public Order CreateProduct(Order order)
         {
             throw new System.NotImplementedException();
         }
