@@ -6,7 +6,7 @@ namespace WebShopApp.Infrastructure.Data.Repositories
 {
     public class OrderRepository : IOrderRepository
     {
-        public Order CreatProduct(Order order)
+        public Order CreateProduct(Order order)
         {
             throw new System.NotImplementedException();
         }
