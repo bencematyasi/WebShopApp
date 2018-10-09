@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using WebShopApp.Core.Application_Service.Service;
+using WebShopApp.Core.Domain_Service;
 using WebShopApp.Core.Entity;
 
 namespace WebShopApp.Core.Application_Service.Impl
@@ -7,14 +9,15 @@ namespace WebShopApp.Core.Application_Service.Impl
     public class ProductService : IProductService
     {
 
-        private readonly IOrderService _orderService;
-        private readonly IProductService _productRepository;
+        private readonly IOrderRepository _orderRepository;
+        private readonly IProductRepository _productRepository;
 
-        public ProductService(IOrderService orderService, IProductService productRepository)
+        public ProductService(IOrderRepository orderRepository, IProductRepository productRepository)
         {
-            _orderService = orderService;
+            _orderRepository = orderRepository;
             _productRepository = productRepository;
         }
+
 
         public void DeleteProduct(int id)
         {
@@ -23,17 +26,20 @@ namespace WebShopApp.Core.Application_Service.Impl
 
         public List<Product> GetAllProducts()
         {
-           return _
+            return _productRepository.ReadAllProduct().ToList();
         }
 
         public Product GetProductById(int id)
         {
-            throw new System.NotImplementedException();
+            Product product = _productRepository.ReadAllProduct().FirstOrDefault(p => p.Id == id);
+            return product;
         }
 
-        public Product NewProduct(Product order)
+        public Product NewProduct(Product product)
         {
-            throw new System.NotImplementedException();
+            _productRepository.CreateProduct(product);
+            return product;
+
         }
 
         public Product UpdateProduct(Order updateOrder)

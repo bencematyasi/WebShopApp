@@ -6,7 +6,7 @@ namespace WebShopApp.Core.Application_Service.Service
     public interface IProductService
     {
         //create Product
-        Product NewProduct(Product order);
+        Product NewProduct(Product product);
 
         //read Product
         List<Product> GetAllProducts();

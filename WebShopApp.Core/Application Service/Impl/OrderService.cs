@@ -23,10 +23,10 @@ namespace WebShopApp.Core.Application_Service.Impl
             _orderRepository.DeleteOrder(id);
         }
 
-        public Order FindOrderByIdIncludeProduct(int id)
-        {
-            return null;
-        }
+        //public Order FindOrderByIdIncludeProduct(int id)
+        //{
+        //    return _orderRepository.FindOrderByIdIncludeProduct(id);
+        //}
 
         public List<Order> GetAllOrders()
         {
