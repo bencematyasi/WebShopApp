@@ -1,10 +1,21 @@
+using System.Collections.Generic;
+using WebShopApp.Core.Entity;
+
 namespace WebShopApp.Core.Application_Service.Service
 {
     public interface IProductService
     {
-        //CREATE
-        //READ
-        //UPDATE
-        //DELETE
+        //create Product
+        Product NewProduct(Product order);
+
+        //read Product
+        List<Product> GetAllProducts();
+        Product GetProductById(int id);
+
+        //update Product
+        Product UpdateProduct(Order updateOrder);
+
+        //delete Product
+        void DeleteProduct(int id);
     }
 }
