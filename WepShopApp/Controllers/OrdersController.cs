@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,16 @@ namespace WepShopApp.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<Order>> Get()
+        public ActionResult<IEnumerable<Order>> Get([FromQuery] Filter filter)
         {
-            return _orderService.GetAllOrders();
+            try
+            {
+                return Ok(_orderService.GetFilteredOrders(filter));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         // GET api/values/5

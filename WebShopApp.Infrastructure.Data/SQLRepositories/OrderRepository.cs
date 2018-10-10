@@ -36,9 +36,21 @@ namespace WebShopApp.Infrastructure.Data.Repositories
                 .FirstOrDefault(o => o.Id == id);
         }
 
-        public IEnumerable<Order> ReadAllOrder()
+        public int Count()
         {
-            return _ctx.Orders;
+            return _ctx.Orders.Count();
+        }
+        
+        public IEnumerable<Order> ReadAllOrder(Filter filter)
+        {
+            if (filter == null)
+            {
+                return _ctx.Orders;
+            }
+            
+            return _ctx.Orders
+                .Skip((filter.CurrentPage - 1) * filter.ItemsPrPage)
+                .Take(filter.ItemsPrPage);
         }
 
         public Order ReadOrderByIdIncludeProduct(int id)

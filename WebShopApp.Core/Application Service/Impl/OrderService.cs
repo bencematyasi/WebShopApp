@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using WebShopApp.Core.Application_Service.Service;
 using WebShopApp.Core.Domain_Service;
@@ -34,9 +35,23 @@ namespace WebShopApp.Core.Application_Service.Impl
             return order;
         }
 
+        public List<Order> GetFilteredOrders(Filter filter)
+        {
+            if (filter.CurrentPage < 0 || filter.ItemsPrPage < 0)
+            {
+                throw new InvalidDataException("CurrentPage and ItemsPage Must zero or more");
+            }
+            if((filter.CurrentPage -1 * filter.ItemsPrPage) >= _orderRepository.Count())
+            {
+                throw new InvalidDataException("Index out bounds, CurrentPage is to high");
+            }
+
+            return _orderRepository.ReadAllOrder(filter).ToList();
+        }
+
         public List<Order> GetAllOrders()
         {
-            return _orderRepository.ReadAllOrder().ToList();
+            return _orderRepository.ReadAllOrder(null).ToList();
         }
 
         public Order GetOrderById(int id)

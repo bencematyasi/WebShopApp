@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using WebShopApp.Core.Entity;
 
 namespace WebShopApp.Core.Domain_Service
@@ -8,9 +9,10 @@ namespace WebShopApp.Core.Domain_Service
         //CREATE
         Order CreateOrder(Order order);
         //READ
-        IEnumerable<Order> ReadAllOrder();
+        IEnumerable<Order> ReadAllOrder(Filter filter);
         Order ReadOrderByIdIncludeProduct(int id);
         Order GetOrderById(int id);
+        int Count();
         //UPDATE
         Order UpdateOrder(Order updateOrder);
         //DELETE
