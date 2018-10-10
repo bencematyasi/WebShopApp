@@ -77,7 +77,7 @@ namespace WepShopApp.Controllers
             {
                 return BadRequest("Size must be between 1 and 55!");
             }
-
+            return _productService.UpdateProduct(updateProduct);
         }
 
         // DELETE api/values/5

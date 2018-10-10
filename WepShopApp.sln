@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WepShopApp", "WepShopApp\WepShopApp.csproj", "{27AE1333-D4E7-4C53-AE38-CA8AD5EBA528}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WepShopApp", "WepShopApp\WepShopApp.csproj", "{27AE1333-D4E7-4C53-AE38-CA8AD5EBA528}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{CE1FFE0A-3C8F-4B2A-8FFB-27665EBE654E}"
 EndProject
@@ -11,11 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{022EEE71-1DE9-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B25F18CA-0663-415C-A1BC-7B6C8E6F250F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopApp.Core", "WebShopApp.Core\WebShopApp.Core.csproj", "{F7AA8B2F-E8ED-4093-A233-5910C94E27D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopApp.Core", "WebShopApp.Core\WebShopApp.Core.csproj", "{F7AA8B2F-E8ED-4093-A233-5910C94E27D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopApp.Core.Entity", "WebShopApp.Core.Entity\WebShopApp.Core.Entity.csproj", "{2DF23A18-E63F-4E68-8635-B69C4595C94D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopApp.Core.Entity", "WebShopApp.Core.Entity\WebShopApp.Core.Entity.csproj", "{2DF23A18-E63F-4E68-8635-B69C4595C94D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopApp.Infrastructure.Data", "WebShopApp.Infrastructure.Data\WebShopApp.Infrastructure.Data.csproj", "{5CB59296-DB6E-4067-99FC-CE9FB22B0461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopApp.Infrastructure.Data", "WebShopApp.Infrastructure.Data\WebShopApp.Infrastructure.Data.csproj", "{5CB59296-DB6E-4067-99FC-CE9FB22B0461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{AB7C6C54-06D6-4B0F-9CAF-4BEEC1F16A64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,17 +41,21 @@ Global
 		{5CB59296-DB6E-4067-99FC-CE9FB22B0461}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CB59296-DB6E-4067-99FC-CE9FB22B0461}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CB59296-DB6E-4067-99FC-CE9FB22B0461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB7C6C54-06D6-4B0F-9CAF-4BEEC1F16A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB7C6C54-06D6-4B0F-9CAF-4BEEC1F16A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB7C6C54-06D6-4B0F-9CAF-4BEEC1F16A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB7C6C54-06D6-4B0F-9CAF-4BEEC1F16A64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {32CD0D5B-848C-4B2C-9BFB-F3FCB1F0A955}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{27AE1333-D4E7-4C53-AE38-CA8AD5EBA528} = {022EEE71-1DE9-4950-AF8D-F82D6AC8DE8B}
 		{F7AA8B2F-E8ED-4093-A233-5910C94E27D3} = {B25F18CA-0663-415C-A1BC-7B6C8E6F250F}
 		{2DF23A18-E63F-4E68-8635-B69C4595C94D} = {B25F18CA-0663-415C-A1BC-7B6C8E6F250F}
 		{5CB59296-DB6E-4067-99FC-CE9FB22B0461} = {CE1FFE0A-3C8F-4B2A-8FFB-27665EBE654E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32CD0D5B-848C-4B2C-9BFB-F3FCB1F0A955}
 	EndGlobalSection
 EndGlobal
