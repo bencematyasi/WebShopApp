@@ -46,7 +46,7 @@ namespace WepShopApp.Controllers
             {
                 return BadRequest("A Name is required for creating a product!");
             }
-            if (product.Stock > 0)
+            if (product.Stock < 0)
             {
                 return BadRequest("You need to have at least 1 item in stock to sell a product");
             }
