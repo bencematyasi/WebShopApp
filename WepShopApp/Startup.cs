@@ -68,7 +68,7 @@ namespace WepShopApp
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin",
-                    builder => builder.WithOrigins("http://localhost:63342").AllowAnyHeader()
+                    builder => builder.WithOrigins("https://ipcsmmd-webshopapp-group23-easv.azurewebsites.net").AllowAnyHeader()
                         .AllowAnyMethod());
             });
         }
