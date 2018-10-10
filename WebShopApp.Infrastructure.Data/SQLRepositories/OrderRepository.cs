@@ -54,9 +54,10 @@ namespace WebShopApp.Infrastructure.Data.Repositories
             _ctx.SaveChanges();
             return updateOrder;
         }
-        //public Order FindOrderByIdIncludeProduct(int id)
-        //{
-        //    return _ctx.Orders.Where(o => o.Id == id).Include(o => o.Product).FirstOrDefault();
-        //}
+
+        public Order FindOrderByIdIncludeProduct(int id)
+        {
+            return _ctx.Orders.Where(o => o.Id == id).Include(o => o.Product).FirstOrDefault();
+        }
     }
 }
