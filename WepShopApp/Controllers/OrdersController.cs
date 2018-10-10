@@ -70,7 +70,7 @@ namespace WepShopApp.Controllers
         {
             if (id < 1 || id != order.Id)
             {
-                return BadRequest("Parameter id and pet Id must be the same");
+                return BadRequest("Parameter id and order Id must be the same");
             }
             if (string.IsNullOrEmpty(order.Address))
             {
