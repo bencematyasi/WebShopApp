@@ -41,7 +41,7 @@ namespace WebShopApp.Core.Application_Service.Impl
             {
                 throw new InvalidDataException("CurrentPage and ItemsPage Must zero or more");
             }
-            if((filter.CurrentPage -1 * filter.ItemsPrPage) >= _orderRepository.Count())
+            if(((filter.CurrentPage - 1) * filter.ItemsPrPage) >= _orderRepository.Count())
             {
                 throw new InvalidDataException("Index out bounds, CurrentPage is to high");
             }
@@ -59,17 +59,17 @@ namespace WebShopApp.Core.Application_Service.Impl
             return _orderRepository.GetOrderById(id);
         }
 
-        public Order NewOrder(string FirstName, string LastName, string Adress, int ZipCode, string Country, Product Product, int Quantity)
+        public Order NewOrder(string firstName, string lastName, string address, int zipCode, string country, Product product, int quantity)
         {
             var order = new Order()
             {
-                FirstName = FirstName,
-                LastName = LastName,
-                Address = Adress,
-                ZipCode = ZipCode,
-                Country = Country,
-                Product = Product,
-                Quantity = Quantity
+                FirstName = firstName,
+                LastName = lastName,
+                Address = address,
+                ZipCode = zipCode,
+                Country = country,
+                Product = product,
+                Quantity = quantity
             };
 
             return order;
