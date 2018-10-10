@@ -51,6 +51,7 @@ namespace WebShopApp.Infrastructure.Data.Repositories
         public Order UpdateOrder(Order updateOrder)
         {
             _ctx.Attach(updateOrder).State = EntityState.Modified;
+            _ctx.Entry(updateOrder).Reference(o => o.Product).IsModified = true;
             _ctx.SaveChanges();
             return updateOrder;
         }
@@ -60,4 +61,4 @@ namespace WebShopApp.Infrastructure.Data.Repositories
             return _ctx.Orders.Where(o => o.Id == id).Include(o => o.Product).FirstOrDefault();
         }
     }
-}
+}    
