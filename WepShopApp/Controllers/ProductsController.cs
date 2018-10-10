@@ -50,6 +50,7 @@ namespace WepShopApp.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _productService.DeleteProduct(id);
         }
     }
 }

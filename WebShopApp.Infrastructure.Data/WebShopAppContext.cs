@@ -11,7 +11,8 @@ namespace WebShopApp.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Order>()
-                .HasOne(p => p.Product);
+                .HasOne(o => o.Product);
+                
         }
 
         public DbSet<Order> Orders { get; set; }

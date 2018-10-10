@@ -12,7 +12,7 @@ namespace WebShopApp.Core.Application_Service.Service
         //read Order
         List<Order> GetAllOrders();
         Order GetOrderById(int id);
-       // Order FindOrderByIdIncludeProduct(int id);
+        Order FindOrderByIdIncludeProduct(int id);
 
         //update Order
         Order UpdateOrder(Order updateOrder);

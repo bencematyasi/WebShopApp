@@ -26,12 +26,12 @@ namespace WepShopApp.Controllers
             return _orderService.GetAllOrders();
         }
 
-        //// GET api/values/5
-        //[HttpGet("{id}")]
-        //public ActionResult<Order> Get(int id)
-        //{
-        //   // return _orderService.FindOrderByIdIncludeProduct(id);
-        //}
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public ActionResult<Order> Get(int id)
+        {
+           return _orderService.FindOrderByIdIncludeProduct(id);
+        }
 
         // POST api/values
         [HttpPost]
@@ -50,7 +50,7 @@ namespace WepShopApp.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-
+            _orderService.DeleteOrder(id);
         }
     }
 }
