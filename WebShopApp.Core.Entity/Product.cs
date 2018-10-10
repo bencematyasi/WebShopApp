@@ -15,6 +15,8 @@ namespace WebShopApp.Core.Entity
         public string Description { get; set; }
         
         public int Size { get; set; }
+        
+        public string Image { get; set; }
 
     }
 }

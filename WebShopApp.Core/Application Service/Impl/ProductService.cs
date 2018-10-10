@@ -39,7 +39,7 @@ namespace WebShopApp.Core.Application_Service.Impl
             return _productRepository.GetProductById(id);
         }
 
-        public Product NewProduct(string name, string category, double price, int stock, string description, int size)
+        public Product NewProduct(string name, string category, double price, int stock, string description, int size, string image)
         {
             var prod = new Product()
             {
@@ -48,7 +48,8 @@ namespace WebShopApp.Core.Application_Service.Impl
                 Price = price,
                 Stock = stock,
                 Description = description,
-                Size = size
+                Size = size,
+                Image = image
             };
 
             return prod;
