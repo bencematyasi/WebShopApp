@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -35,24 +36,64 @@ namespace WepShopApp.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] Product product)
+        public ActionResult<Product> Post([FromBody] Product product)
         {
-            _productService.CreateProduct(product);
+            if (product.Price == 0)
+            {
+                return BadRequest("A Price is required for creating a product!");
+            }
+            if (string.IsNullOrEmpty(product.Name))
+            {
+                return BadRequest("A Name is required for creating a product!");
+            }
+            if (product.Stock > 0)
+            {
+                return BadRequest("You need to have at least 1 item in stock to sell a product");
+            }
+            if (product.Size > 0 || product.Size <= 55)
+            {
+                return BadRequest("Size must be between 1 and 55!");
+            }
+            return _productService.CreateProduct(product);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put([FromBody] Product updateProduct)
+        public ActionResult<Product> Put([FromBody] Product updateProduct)
         {
-            _productService.UpdateProduct(updateProduct);
+            if (updateProduct.Price == 0)
+            {
+                return BadRequest("A Price is required for updating a product!");
+            }
+            if (string.IsNullOrEmpty(updateProduct.Name))
+            {
+                return BadRequest("A Name is required for updating a product!");
+            }
+            if (updateProduct.Stock > 0)
+            {
+                return BadRequest("You need to have at least 1 item in stock to sell a product");
+            }
+            if (updateProduct.Size > 0 || updateProduct.Size <= 55)
+            {
+                return BadRequest("Size must be between 1 and 55!");
+            }
 
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult<Product> Delete(int id)
         {
-            _productService.DeleteProduct(id);
+            try
+            {
+                _productService.DeleteProduct(id);
+                
+            }
+            catch
+            {
+                return BadRequest("You need to fulfill all orders with this product in order to delete it.");
+            }
+            return Ok($"Product with Id: {id} is Deleted");
         }
     }
 }
