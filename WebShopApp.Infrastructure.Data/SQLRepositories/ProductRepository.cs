@@ -42,7 +42,9 @@ namespace WebShopApp.Infrastructure.Data.Repositories
 
         public Product UpdateProduct(Product updateProduct)
         {
-            throw new System.NotImplementedException();
+            _ctx.Attach(updateProduct).State = EntityState.Modified;
+            _ctx.SaveChanges();
+            return updateProduct;
         }
     }
 }

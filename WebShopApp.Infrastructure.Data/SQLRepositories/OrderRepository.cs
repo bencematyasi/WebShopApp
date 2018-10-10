@@ -50,7 +50,9 @@ namespace WebShopApp.Infrastructure.Data.Repositories
 
         public Order UpdateOrder(Order updateOrder)
         {
-            return null;
+            _ctx.Attach(updateOrder).State = EntityState.Modified;
+            _ctx.SaveChanges();
+            return updateOrder;
         }
         //public Order FindOrderByIdIncludeProduct(int id)
         //{
