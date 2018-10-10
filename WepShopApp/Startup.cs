@@ -48,7 +48,7 @@ namespace WepShopApp
             {
                 services.AddDbContext<WebShopAppContext>(
                     opt => opt
-                        .UseSqlServer(_conf.GetConnectionString("DefaultConnection")));
+                        .UseSqlServer(_conf.GetConnectionString("defaultConnection")));
             }
 
             services.AddScoped<IProductRepository, ProductRepository>();
