@@ -35,9 +35,33 @@ namespace WepShopApp.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] Order order)
+        public ActionResult<Order> Post([FromBody] Order order)
         {
-            _orderService.CreateOrder(order);
+            if (string.IsNullOrEmpty(order.Address))
+            {
+                return BadRequest("An Address required for placing an order!");
+            }
+            if (string.IsNullOrEmpty(order.Country))
+            {
+                return BadRequest("A Country required for placing an order!");
+            }
+            if (string.IsNullOrEmpty(order.FirstName))
+            {
+                return BadRequest("Your First Name required for placing an order!");
+            }
+            if (string.IsNullOrEmpty(order.LastName))
+            {
+                return BadRequest("Your Last Name required for placing an order!");
+            }
+            if (order.ZipCode == 0)
+            {
+                return BadRequest("A Zipcode required for placing an order!");
+            }
+            if (order.Quantity == 0)
+            {
+                return BadRequest("Quantity must be greater then 0 (Obviously...)!");
+            }
+            return _orderService.CreateOrder(order);
         }
 
         // PUT api/values/5
