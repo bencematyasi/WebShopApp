@@ -18,16 +18,7 @@ namespace XUnitTestProject1
         [Fact]
         public void Test1()
         {
-
-            var repo = new Mock<IProductRepository>();
-            var orderRepo = new Mock<IOrderRepository>();
-
-            IProductService productService = new ProductService((oj,orderRepo;
-
-            Exception ex = Assert.Throws<NullReferenceException>(() => _productRepository.CreateProduct(prod));
-            Assert.Equal("Input is null!", ex.Message);
-
-
+            IProductService prodRepo = new ProductService();
         }
     }
 }
