@@ -12,6 +12,7 @@ namespace WebShopApp.Infrastructure.Data
         {
             modelBuilder.Entity<Order>()
                 .HasOne(o => o.Product);
+
                 
         }
 

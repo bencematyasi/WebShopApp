@@ -71,6 +71,11 @@ namespace WepShopApp
                     builder => builder.WithOrigins("http://localhost:63342").AllowAnyHeader()
                         .AllowAnyMethod());
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAnyOrigin",
+                    builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,7 +99,8 @@ namespace WepShopApp
                 }
                 app.UseHsts();
             }
-            app.UseCors("AllowSpecificOrigin");
+            //app.UseCors("AllowSpecificOrigin");
+            app.UseCors("AllowAnyOrigin");
 
            app.UseHttpsRedirection();
            app.UseMvc();
