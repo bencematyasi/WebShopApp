@@ -65,12 +65,12 @@ namespace WepShopApp
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy("AllowSpecificOrigin",
-            //        builder => builder.WithOrigins("https://ipcsmmd-webshopapp-group23-easv.azurewebsites.net/api/").AllowAnyHeader()
-            //            .AllowAnyMethod());
-            //});
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("http://localhost:63342").AllowAnyHeader()
+                        .AllowAnyMethod());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,6 +94,7 @@ namespace WepShopApp
                 }
                 app.UseHsts();
             }
+            app.UseCors("AllowSpecificOrigin");
 
            app.UseHttpsRedirection();
            app.UseMvc();
