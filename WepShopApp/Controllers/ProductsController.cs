@@ -46,14 +46,14 @@ namespace WepShopApp.Controllers
             {
                 return BadRequest("A Name is required for creating a product!");
             }
-            if (product.Stock > 0)
+            if (product.Stock < 0)
             {
                 return BadRequest("You need to have at least 1 item in stock to sell a product");
             }
-            /*if (product.Size > 0 || product.Size <= 55)
+            if (product.Size < 0 || product.Size >= 55)
             {
                 return BadRequest("Size must be between 1 and 55!");
-            }*/
+            }
             return _productService.CreateProduct(product);
         }
 
