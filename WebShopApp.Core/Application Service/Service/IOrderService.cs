@@ -13,6 +13,7 @@ namespace WebShopApp.Core.Application_Service.Service
         List<Order> GetAllOrders();
         Order GetOrderById(int id);
         Order FindOrderByIdIncludeProduct(int id);
+        List<Order> GetFilteredOrders(Filter filter);
 
         //update Order
         Order UpdateOrder(Order updateOrder);
