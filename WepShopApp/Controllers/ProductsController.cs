@@ -50,10 +50,10 @@ namespace WepShopApp.Controllers
             {
                 return BadRequest("You need to have at least 1 item in stock to sell a product");
             }
-            if (product.Size > 0 || product.Size <= 55)
+            /*if (product.Size > 0 || product.Size <= 55)
             {
                 return BadRequest("Size must be between 1 and 55!");
-            }
+            }*/
             return _productService.CreateProduct(product);
         }
 
